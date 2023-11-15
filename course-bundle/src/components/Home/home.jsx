@@ -6,7 +6,7 @@ import vg from '../../assets/images/bg.png'
 import {CgGoogle,CgYoutube} from 'react-icons/cg'
 import {DiAws} from 'react-icons/di'
 import {SiCoursera,SiUdemy} from 'react-icons/si'
-import introVideo from '../../assets/videos/intro.mp4'
+// import introVideo from '../../assets/videos/intro.mp4'
 
 
 function Home() {
@@ -39,9 +39,9 @@ function Home() {
             </HStack>
         </Box>
         <div className="container2">
-            <video controls controlsList='nodownload nofullscreen noremoteplayback' disablePictureInPicture disableRemotePlayback src={introVideo}>
+            {/* <video controls controlsList='nodownload nofullscreen noremoteplayback' disablePictureInPicture disableRemotePlayback src={introVideo}>
 
-            </video>
+            </video> */}
         </div>
     </section>
   )
