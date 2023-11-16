@@ -1,5 +1,5 @@
 import React from 'react'
-import { ColorModeSwitcher } from '../../ColorModeSwitcher'
+import { ColorModeSwitcher } from '../../../ColorModeSwitcher'
 import { Button, Drawer, DrawerBody, DrawerContent, DrawerHeader, DrawerOverlay, HStack, VStack, useDisclosure } from '@chakra-ui/react'
 import {RiDashboardFill, RiLogoutBoxLine, RiMenu5Fill} from 'react-icons/ri'
 import { Link } from 'react-router-dom'
