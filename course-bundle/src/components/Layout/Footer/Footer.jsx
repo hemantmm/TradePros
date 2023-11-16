@@ -19,11 +19,11 @@ function Footer() {
                     <TiSocialYoutubeCircular />
                 </a>
 
-                <a href='https://instagram.com/hemant' target={'_blank'}>
+                <a href='https://instagram.com/hemant' target={'_blank'} rel="noreferrer">
                     <TiSocialInstagramCircular />
                 </a>
 
-                <a href='https://github.com/hemantmm' target={'_blank'}>
+                <a href='https://github.com/hemantmm' target={'_blank'} rel="noreferrer">
                     <DiGithub />
                 </a>
             </HStack>
