@@ -58,7 +58,7 @@ function Header() {
                             </HStack>
 
                             {
-                                user && user.role=='admin' && <Link onClick={onClose} to='/admin/dashboard'>
+                                user && user.role==='admin' && <Link onClick={onClose} to='/admin/dashboard'>
                                     <Button colorScheme={'purple'} variant={'ghost'}>
                                         <RiDashboardFill style={{margin:'4px'}} />
                                         Dashboard
