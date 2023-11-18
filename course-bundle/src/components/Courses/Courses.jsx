@@ -65,7 +65,7 @@ function Courses() {
         </HStack>
 
         <Stack direction={["column","row"]} flexWrap="wrap" justifyContent={["flex-start","space-evenly"]} alignItems={["center","flex-start"]}>
-            <Course title={"sample"} description={"sample"} views={29} imageSrc={'https://cdn.pixabay.com/photo/2017/05/10/19/29/robot-2301646_960_720.jpg'} id={'smaplpe'} creator={'sample'} lectureCount={9} addToPlaylistHandler={addToPlaylistHandler} />
+            <Course title={"sample"} description={"sample"} views={29} imageSrc={'https://cdn.pixabay.com/photo/2017/05/10/19/29/robot-2301646_960_720.jpg'} id={'sample'} creator={'sample'} lectureCount={9} addToPlaylistHandler={addToPlaylistHandler} />
         </Stack>
       </Container>
     </>
