@@ -1,7 +1,9 @@
-import { Avatar, Box, Button, Container, Heading, Stack, Text, VStack } from '@chakra-ui/react'
+import { Avatar, Box, Button, Container, HStack, Heading, Stack, Text, VStack } from '@chakra-ui/react'
 import React from 'react'
 import profileImage from '../../assets/images/profile.png'
 import { Link } from 'react-router-dom'
+import {RiSecurePaymentFill} from 'react-icons/ri'
+import termsAndCondition from '../../assets/docs/termsAndCondition'
 
 const Founder=()=>(
     <Stack direction={['column','row']} spacing={['4','16']} padding={'8'}>
@@ -17,11 +19,25 @@ const Founder=()=>(
     </Stack>
 )
 
-const videoPlayer=()=>{
+const VideoPlayer=()=>{
     <Box>
         {/* <video */}
+         {/* <video loop controls controlsList='nodownload nofullscreen noremoteplayback' disablePictureInPicture disableRemotePlayback src={introVideo}>
+            </video> */}
     </Box>
 }
+
+const TandC=({termsAndCondition})=>(
+    <Box>
+        <Heading size={'md'} children='Terms & Conditions' textAlign={['center','left']} my='4' />
+        <Box h={'sm'} p='4' overflowY={'scroll'}>
+            <Text textAlign={['center','left']} letterSpacing={'widest'} fontFamily={'heading'}>
+                {termsAndCondition}
+            </Text>
+            <Heading my='4' size={'xs'} children="Refund only applicable for valid users with payment upto 7 days" />
+        </Box>
+    </Box>
+)
 
 function About() {
   return (
@@ -43,6 +59,14 @@ function About() {
                     </Button>
                 </Link>
             </Stack>
+            <VideoPlayer />
+
+            <TandC termsAndCondition={termsAndCondition} />
+
+            <HStack my="4" p={'4'}>
+                <RiSecurePaymentFill />
+                <Heading size={'xs'} fontFamily="sans-serif" textTransform={"uppercase"} children={"Payment is secured by RazorPay"} />
+            </HStack>
         </Container>
     </>
   )
