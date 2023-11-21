@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 
 function PaymentSuccess() {
   return (
-    // <div>PaymentSuccess</div>
     <>
     <Container h='90vh' p='16'>
         <Heading my='8' textAlign={'center'}>Premiumer Subscriber</Heading>
