@@ -26,7 +26,9 @@ function Profile() {
         console.log(id);
     }
 
-    const changeImageSubmitHandler=(e,image)=>{}
+    const changeImageSubmitHandler=(e,image)=>{
+        e.preventDefault()
+    }
 
     const {isOpen,onClose,onOpen}=useDisclosure()
 
