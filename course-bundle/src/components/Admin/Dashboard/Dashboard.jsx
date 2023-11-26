@@ -2,7 +2,7 @@ import { Box, Grid, HStack, Heading, Progress, Stack, Text } from '@chakra-ui/re
 import React from 'react'
 import Sidebar from '../Sidebar'
 import { RiArrowDownLine, RiArrowUpLine } from 'react-icons/ri'
-import { LineChart } from './Chart'
+import { DoughnutChart, LineChart } from './Chart'
 // import cursor from '../../../assets/images/cursor.png'
 
 const Databox=({title,qty,qtyPercentage,profit})=>(
@@ -72,6 +72,7 @@ function Dashboard() {
 
             <Box p={['0','16']} boxSizing='border-box' py='4'>
               <Heading textAlign={'center'} size={'md'} mb={'4'} children='Users' />
+              <DoughnutChart />
             </Box>
           </Grid>
 
