@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { RiDeleteBin7Fill } from 'react-icons/ri'
 import { fileUploadCSS } from '../../Auth/Register'
 
-function CourseModal({isOpen,onClose,id,deleteButtonHandler,addLectureHandler,courseTitle,lectures=[],}) {
+function CourseModal({isOpen,onClose,id,deleteButtonHandler,addLectureHandler,courseTitle,lectures=[1,2,3,4,5,6,7,8],}) {
 
     // const courseTitle="React course"
 
@@ -34,7 +34,7 @@ function CourseModal({isOpen,onClose,id,deleteButtonHandler,addLectureHandler,co
 
   return (
     <>
-    <Modal isOpen={isOpen} size={'full'} onClose={handleClose}>
+    <Modal isOpen={isOpen} size={'full'} onClose={handleClose} scrollBehavior='outside' >
         <ModalOverlay />
 
         <ModalContent>
@@ -49,7 +49,12 @@ function CourseModal({isOpen,onClose,id,deleteButtonHandler,addLectureHandler,co
                         </Box>
 
                         <Heading children={"Lecures"} size={'lg'} />
-                        <VideoCard title="React intro" description='this is intro' num={1} lectureId="asdfd" courseId={id} deleteButtonHandler={deleteButtonHandler} />
+
+                        {
+                            lectures.map((item,i)=>(
+                        <VideoCard key={i} title="React intro" description='this is intro' num={i+1} lectureId="asdfd" courseId={id} deleteButtonHandler={deleteButtonHandler} />
+                            ))
+                        }
                     </Box>
 
                     <Box>
@@ -78,7 +83,7 @@ function CourseModal({isOpen,onClose,id,deleteButtonHandler,addLectureHandler,co
             </ModalBody>
 
             <ModalFooter>
-                <Button onClick={onClose}>Close</Button>
+                <Button onClick={handleClose}>Close</Button>
             </ModalFooter>
         </ModalContent>
 
