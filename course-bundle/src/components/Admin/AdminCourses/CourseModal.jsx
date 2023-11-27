@@ -1,11 +1,28 @@
-import { Box, Button, Grid, Heading, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Stack, Text } from '@chakra-ui/react'
-import React from 'react'
+import { Box, Button, Grid, Heading, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Stack, Text, VStack } from '@chakra-ui/react'
+import React, { useState } from 'react'
 import { RiDeleteBin7Fill } from 'react-icons/ri'
+import { fileUploadCSS } from '../../Auth/Register'
 
-    const
 function CourseModal({isOpen,onClose,id,deleteButtonHandler,addLectureHandler,courseTitle,lectures=[],}) {
 
     // const courseTitle="React course"
+
+    const [title,setTitle]=useState('')
+    const [description,setDescription]=useState('')
+    const [video,setVideo]=useState('')
+    const [videoPrev,setVideoPrev]=useState('')
+
+    const changeVideoHandler=(e)=>{
+        const file=e.target.files[0]
+        const reader=new FileReader();
+    
+        reader.readAsDataURL(file)
+    
+        reader.onloadend=()=>{
+            setVideoPrev(reader.result)
+            setVideo(file)
+        }
+      }
 
   return (
     // <div>CourseModal</div>
@@ -27,9 +44,35 @@ function CourseModal({isOpen,onClose,id,deleteButtonHandler,addLectureHandler,co
                         <Heading children={"Lecures"} size={'lg'} />
                         <VideoCard title="React intro" description='this is intro' num={1} lectureId="asdfd" courseId={id} deleteButtonHandler={deleteButtonHandler} />
                     </Box>
+
+                    <Box>
+                        <form onSubmit={e=>addLectureHandler(e,id,title,description,video)}>
+                            <VStack spacing={'4'}>
+                                <Heading children="Add Lectures" size={'md'} textTransform={'uppercase'} />
+
+                                <Input focusBorderColor='purple.300' placeContent='Title' value={title} onChange={(e)=>setTitle(e.target.value)} />
+                                <Input focusBorderColor='purple.300' placeContent='Description' value={description} onChange={(e)=>setDescription(e.target.value)} />
+                                <Input accept='video/mp4' required type={'file'} focusBorderColor='purple.300' onChange={changeVideoHandler} css={{
+            '&::file-seclector-button':{
+              ...fileUploadCSS,color:"purple"
+            }
+          }} />
+
+          {videoPrev &&(
+            <video controlsList='nodownload' controls src={videoPrev}></video>
+          )}
+
+          <Button w='full' colorScheme='purple' type='submit'>Upload</Button>
+                            </VStack>
+                        </form>
+                    </Box>
                 </Grid>
 
             </ModalBody>
+
+            <ModalFooter>
+                <Button onClick={onClose}>Close</Button>
+            </ModalFooter>
         </ModalContent>
 
     </Modal>
