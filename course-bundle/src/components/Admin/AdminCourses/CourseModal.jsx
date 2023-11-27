@@ -24,14 +24,22 @@ function CourseModal({isOpen,onClose,id,deleteButtonHandler,addLectureHandler,co
         }
       }
 
+      const handleClose=()=>{
+        setTitle('')
+        setDescription('')
+        setVideo('')
+        setVideoPrev('')
+        onClose()
+      }
+
   return (
     <>
-    <Modal isOpen={isOpen} size={'full'}>
+    <Modal isOpen={isOpen} size={'full'} onClose={handleClose}>
         <ModalOverlay />
 
         <ModalContent>
             <ModalHeader>{courseTitle}</ModalHeader>
-            <ModalCloseButton onClick={onClose} />
+            <ModalCloseButton/>
             <ModalBody p='16'>
                 <Grid templateColumns={['1fr','3fr 1fr']}>
                     <Box px={['0','16']}>
