@@ -25,14 +25,13 @@ function CourseModal({isOpen,onClose,id,deleteButtonHandler,addLectureHandler,co
       }
 
   return (
-    // <div>CourseModal</div>
     <>
     <Modal isOpen={isOpen} size={'full'}>
         <ModalOverlay />
 
         <ModalContent>
             <ModalHeader>{courseTitle}</ModalHeader>
-            <ModalCloseButton />
+            <ModalCloseButton onClick={onClose} />
             <ModalBody p='16'>
                 <Grid templateColumns={['1fr','3fr 1fr']}>
                     <Box px={['0','16']}>

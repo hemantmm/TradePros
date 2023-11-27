@@ -6,7 +6,6 @@ import CourseModal from './CourseModal'
 
 function AdminCourses() {
 
-  const {isOpen,onClose,onOpen}=useDisclosure()
   
   const courses=[{
     _id:"fdasfda",
@@ -19,6 +18,8 @@ function AdminCourses() {
     views:299,
     numOfVideos:12,
   }]
+
+  const {isOpen,onOpen,onClose}=useDisclosure()
 
   const courseDetailHandler=(userId)=>{
     console.log(userId);
@@ -71,7 +72,7 @@ function AdminCourses() {
             </Table>
           </TableContainer>
 
-          <CourseModal isOpen={isOpen} onClose={onClose} id={"fdas"} courseTitle="React course" addLectureHandler={addLectureHandler} deleteButtonHandler={deleteLectureButtonHandler} />
+          <CourseModal isOpen={isOpen} id={"fdas"} courseTitle="React course" addLectureHandler={addLectureHandler} deleteButtonHandler={deleteLectureButtonHandler} onClose={onClose} />
         </Box>
         <Sidebar />
     </Grid>
