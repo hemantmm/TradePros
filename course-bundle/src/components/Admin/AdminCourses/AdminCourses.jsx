@@ -29,6 +29,14 @@ function AdminCourses() {
     console.log(userId);
   }
 
+  const deleteLectureButtonHandler=(courseId,lectureId)=>{
+    console.log(lectureId,courseId);
+  }
+
+  const addLectureHandler=(e,courseId,title,description,video)=>{
+    e.preventDefault()
+  }
+
 
   return (
     // <div>Users</div>
@@ -63,7 +71,7 @@ function AdminCourses() {
             </Table>
           </TableContainer>
 
-          <CourseModal isOpen={isOpen} onClose={onClose} />
+          <CourseModal isOpen={isOpen} onClose={onClose} id={"fdas"} courseTitle="React course" addLectureHandler={addLectureHandler} deleteButtonHandler={deleteLectureButtonHandler} />
         </Box>
         <Sidebar />
     </Grid>

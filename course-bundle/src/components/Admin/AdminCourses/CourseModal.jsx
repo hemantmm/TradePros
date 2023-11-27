@@ -2,9 +2,10 @@ import { Box, Button, Grid, Heading, Modal, ModalBody, ModalCloseButton, ModalCo
 import React from 'react'
 import { RiDeleteBin7Fill } from 'react-icons/ri'
 
-function CourseModal({isOpen,onClose,id,deleteButtonHandler}) {
+    const
+function CourseModal({isOpen,onClose,id,deleteButtonHandler,addLectureHandler,courseTitle,lectures=[],}) {
 
-    const courseTitle="React course"
+    // const courseTitle="React course"
 
   return (
     // <div>CourseModal</div>
