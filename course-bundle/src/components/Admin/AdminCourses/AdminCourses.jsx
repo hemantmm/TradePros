@@ -1,10 +1,13 @@
-import { Box, Button, Grid, HStack, Heading, Image, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react'
+import { Box, Button, Grid, HStack, Heading, Image, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr, useDisclosure } from '@chakra-ui/react'
 import React from 'react'
 import Sidebar from '../Sidebar'
 import { RiDeleteBin7Fill } from 'react-icons/ri'
+import CourseModal from './CourseModal'
 
 function AdminCourses() {
 
+  const {isOpen,onClose,onOpen}=useDisclosure()
+  
   const courses=[{
     _id:"fdasfda",
     title:"react course",
@@ -19,11 +22,14 @@ function AdminCourses() {
 
   const courseDetailHandler=(userId)=>{
     console.log(userId);
+    onOpen();
   }
 
   const deleteButtonHandler=(userId)=>{
     console.log(userId);
   }
+
+
   return (
     // <div>Users</div>
     <>
@@ -56,6 +62,8 @@ function AdminCourses() {
               </Tbody>
             </Table>
           </TableContainer>
+
+          <CourseModal isOpen={isOpen} onClose={onClose} />
         </Box>
         <Sidebar />
     </Grid>
